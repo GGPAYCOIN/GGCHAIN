@@ -1,0 +1,41 @@
+{
+  "name": "@gghyper/sdk",
+  "version": "0.1.0",
+  "description": "Official GGCHAIN JavaScript/TypeScript SDK — interact with GG, bUSDT, QMX, NFT marketplace, GGSwap, mining pool & bridge.",
+  "license": "MIT",
+  "author": "GGHyper Labs",
+  "homepage": "https://gghyper.net",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gghyper/sdk-js.git"
+  },
+  "keywords": ["ggchain", "gghyper", "web3", "evm", "ethers", "blockchain", "sdk"],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format esm --watch",
+    "test": "vitest run",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "ethers": "^6.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.5.0"
+  },
+  "engines": { "node": ">=18" }
+}
